@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
-
-RUN apt-get update && apt-get install -y openssh-server
+#FROM ubuntu:16.04
+FROM centos:7.6
+#RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:Passw0rd' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
